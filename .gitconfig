@@ -10,3 +10,5 @@
   b = branch
   cb = checkout -b
   c = checkout
+  pd = push -u origin develop
+  p = push
