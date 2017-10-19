@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/chykehyman/ReactReduxDemoApp/issues"
   },
-  "homepage": "https://github.com/chykehyman/ReactReduxDemoApp#readme"
+  "homepage": "https://github.com/chykehyman/ReactReduxDemoApp#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.12.1"
+  }
 }
