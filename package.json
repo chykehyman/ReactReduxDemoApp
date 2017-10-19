@@ -1,27 +1,27 @@
 {
-  "name": "react-redux-demo-app",
-  "version": "1.0.0",
-  "description": "This is just a basic demo application employing the latest Facebook client side technologies such React and Redux.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chykehyman/ReactReduxDemoApp.git"
-  },
-  "author": "Chinwoke Hyginus",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chykehyman/ReactReduxDemoApp/issues"
-  },
-  "homepage": "https://github.com/chykehyman/ReactReduxDemoApp#readme",
-  "dependencies": {
-    "express": "^4.16.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "nodemon": "^1.12.1"
-  }
+    "name": "react-redux-demo-app",
+    "version": "1.0.0",
+    "description": "This is just a basic demo application employing the latest Facebook client side technologies such React and Redux.",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/nodemon --watch server --exec babel-node -- server/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chykehyman/ReactReduxDemoApp.git"
+    },
+    "author": "Chinwoke Hyginus",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/chykehyman/ReactReduxDemoApp/issues"
+    },
+    "homepage": "https://github.com/chykehyman/ReactReduxDemoApp#readme",
+    "dependencies": {
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "nodemon": "^1.12.1"
+    }
 }
