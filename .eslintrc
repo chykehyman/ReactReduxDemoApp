@@ -34,7 +34,8 @@
         "one-var": 0,
         "semi": ["error", "always"],
         "eol-last": ["off", "always"],
-        "indent": ["error", 4],
+        "indent": ["off", 2],
+        "class-methods-use-this": 0,
         "no-console": ["off", "always"],
         "max-len": [1, 200, 2],
         "one-var-declaration-per-line": 0,
@@ -52,7 +53,7 @@
             "requireReturnDescription": true
         }],
 
-        "require-jsdoc": ["error", {
+        "require-jsdoc": ["off", {
             "require": {
                 "FunctionDeclaration": true,
                 "MethodDefinition": true,
