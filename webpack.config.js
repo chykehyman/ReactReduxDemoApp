@@ -1,49 +1,57 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
-    entry: './client/index.jsx',
+    devtool: 'eval-source-map',
+    entry: [
+        'webpack/hot/dev-server',
+        'webpack-hot-middleware/client?reload=true',
+        path.join(__dirname, '/client/index.jsx')
+    ],
     output: {
-        path: path.resolve(__dirname, 'src'),
-        publicPath: '/src',
+        path: '/',
+        publicPath: '/',
         filename: 'bundle.min.js'
     },
     module: {
         rules: [{
                 test: /\.(js?x)$/,
-                include: [
-                    path.join(__dirname, '/client')
-                ],
-                use: 'babel-loader',
-                exclude: path.resolve(__dirname, 'node_modules')
+                use: ['react-hot-loader/webpack', 'babel-loader'],
+                include: path.join(__dirname, 'client'),
+                exclude: /(node_modules|server|.vscode)/
             },
             {
-                test: /\.(css|scss)$/,
-                use: 'style-loader!css-loader!sass-loader'
+                test: /\.(scss)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
+                use: 'url-loader'
             }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'client/index.html'
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        // new HtmlWebpackPlugin({
+        //     template: 'client/index.html'
+        // }),
         new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
     ],
-    devServer: {
-        contentBase: 'src',
-        publicPath: '/src',
-        inline: true,
-        port: 8000,
-        historyApiFallback: true,
-        hot: true
+    // devServer: {
+    //     // contentBase: 'src',
+    //     // publicPath: '/src',
+    //     // inline: true,
+    //     // port: 8000,
+    //     historyApiFallback: true
+    //         // hot: true
+    // },
+    node: {
+        fs: 'empty',
+        net: 'empty'
     },
-
     resolve: {
         extensions: ['.jsx', '.js']
     }

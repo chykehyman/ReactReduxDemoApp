@@ -1,17 +1,25 @@
-/* main.css */
+/* main.scss */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html,
 body {
-    margin: 0;
     height: 100%;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
 }
 
-a.beautify {
+p.lead.beautify a {
     color: gold;
     font-size: 1.3rem;
 }
 
-.beautify {
+.beautify,
+p#sub-title.lead {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -19,11 +27,26 @@ a.beautify {
     padding: 1.4rem;
 }
 
-footer#copyright hr {
-    margin-left: 10%;
-    margin-right: 10%;
-    border-top: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
+.container-fluid {
+    padding: 1rem;
+}
+
+.figure a:hover {
+    text-decoration: none;
+}
+
+footer#homeFooter,
+footer#footer {
+    background: url("../images/footer.jpg") top center no-repeat;
+    background-size: cover;
+    padding: 0.5rem;
+    height: auto;
+}
+
+footer#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 header {
@@ -33,6 +56,12 @@ header {
 h1.display-3 {
     color: wheat;
     padding-top: 1rem;
+}
+
+h2,
+.lead a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: cadetblue;
 }
 
 hr#favorites {
@@ -52,10 +81,13 @@ li.active {
     margin-bottom: 10px;
 }
 
+.list-group-item h5 {
+    border-bottom: 2px solid burlywood;
+}
+
 #main-wrapper {
     text-align: center;
     color: white;
-    display: flex;
     align-content: center;
     height: auto;
     padding: 1.4rem;
@@ -67,6 +99,10 @@ main.landing {
     background-attachment: fixed;
 }
 
+section#home img {
+    max-height: 12rem;
+}
+
 #site-name {
     font-family: 'Playball', cursive;
     font-size: 1.7rem;
@@ -74,7 +110,8 @@ main.landing {
 }
 
 .site-wrapper {
-    height: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 @media screen and (max-width: 1000px) and (min-width: 150px) {

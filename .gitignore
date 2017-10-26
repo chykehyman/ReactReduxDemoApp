@@ -2,6 +2,7 @@
 .vscode
 .nyc_output
 coverage
+srcs
 
 .coveralls.yml
 
