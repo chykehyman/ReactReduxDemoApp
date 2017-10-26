@@ -20,6 +20,7 @@ export default class SignupForm extends Component {
                                 type="text"
                                 className="form-control form-control-sm"
                                 id="username"
+                                name="username"
                                 placeholder="enter username"/>
                         </div>
                     </div>
@@ -33,6 +34,7 @@ export default class SignupForm extends Component {
                                 type="password"
                                 className="form-control form-control-sm"
                                 id="password"
+                                name="password"
                                 placeholder="enter password"/>
                         </div>
                     </div>
